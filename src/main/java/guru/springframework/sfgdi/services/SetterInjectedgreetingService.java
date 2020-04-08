@@ -11,14 +11,13 @@ import org.springframework.stereotype.Service;
  *
  * @author None
  */
-@Service
-public class GreetingServiceImpl implements GreetingService
-{
 
+@Service
+public class SetterInjectedgreetingService implements GreetingService
+{
     @Override
     public String sayGreeting()
     {
-        return "Hello World";
+        return "Hello World - Setter";
     }
-    
 }
