@@ -5,13 +5,10 @@
  */
 package guru.springframework.sfgdi.controllers;
 
-import guru.springframework.sfgdi.services.ConstructorGreetingService;
+import guru.services.ConstructorGreetingService;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *

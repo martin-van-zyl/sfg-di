@@ -3,22 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guru.springframework.sfgdi.services;
+package guru.services;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 /**
  *
  * @author None
  */
-@Service
-public class ConstructorGreetingService implements GreetingService
+@Profile({"ES", "default"})
+//@Profile("ES")
+@Service("i18nService")
+public class I18nSpanishGreetingService implements GreetingService
 {
 
     @Override
     public String sayGreeting()
     {
-        return "Hello World - Constructor";
+        return "Buen dia como te va - ES";
     }
     
 }

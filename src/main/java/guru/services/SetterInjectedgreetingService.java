@@ -3,24 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guru.springframework.sfgdi.services;
+package guru.services;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 /**
  *
  * @author None
  */
-@Primary
-@Service
-public class PrimaryGreetingService implements GreetingService
-{
 
+@Service
+public class SetterInjectedgreetingService implements GreetingService
+{
     @Override
     public String sayGreeting()
     {
-        return "Hello World - from the PRIMARY Bean";
+        return "Hello World - Setter";
     }
-    
 }
