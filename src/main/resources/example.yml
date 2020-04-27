@@ -1,0 +1,45 @@
+# this is a comment
+
+name: John
+
+names: #You can also put an inline comment here
+  - John
+  - Paul
+  - Ringo
+  - George
+
+pund_sighn: "#"
+
+book:
+  author: Joe Buck
+  publisher: random house
+
+truth: yes
+
+another_truth: True
+
+more_true: true
+
+false: no #No, false, FALSE
+
+string_val: "This is it's quote"
+
+colon_string: "my courses: one two three"
+
+include_new_lines: |
+  The pipe character
+  above wil tell yaml
+  to include the new
+  lines after every
+  carriage return in
+  this source string
+  assigned.
+
+ignore_new_lines: >
+  This pipe character
+  above will effectively
+  drop all new line characters
+  and reduce the source
+  text to just one long
+  string.
+
