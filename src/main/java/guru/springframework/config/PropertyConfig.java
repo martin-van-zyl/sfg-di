@@ -12,15 +12,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
 @Configuration
-//@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
-public class PropertyConfig {
 
-    @Autowired
-    Environment env;
+public class PropertyConfig {
 
     @Value("${guru.username}")
     String user;
@@ -43,7 +36,7 @@ public class PropertyConfig {
     @Bean
     public FakeDataSource fakeDataSource(){
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUser(env.getProperty("USERNAME"));
+        fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
 
@@ -60,15 +53,5 @@ public class PropertyConfig {
         return jmsBroker;
     }
 
-    //John Thompson says PropertySourcesPlaceholderConfigurer will scan for and
-    //read the datasource.properties file in order to populate the above properties
-    //annotated by @Value
-    //------------------------ Discovery .....................................
-    //The Annotation @PropertySource (just below @Configuration) passes the
-    //datasource.properties file as a parameter to the classpath... yay 8-D
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer properties() {
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-        return propertySourcesPlaceholderConfigurer;
-    }
+
 }
